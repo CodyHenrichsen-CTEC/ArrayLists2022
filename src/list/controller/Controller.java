@@ -18,7 +18,7 @@ public class Controller
 		this.drinks = new ArrayList<Coffee>();
 		this.keyboardInput = new Scanner(System.in);
 		this.view = new Popup();
-		
+
 	}
 
 	public void start()
@@ -30,7 +30,7 @@ public class Controller
 		destroyingData();
 		usingWrapperClasses();
 		searchingLists();
-		
+
 		removalDemo();
 		keyboardInput.close();
 	}
@@ -59,7 +59,7 @@ public class Controller
 		boolean isTheSame = demoList.equals(myWords);
 		view.displayMessage("The myWords list is the same as demoList: " + isTheSame);
 		view.displayMessage("myWords: " + wordsContents + "\n" + "demoContents: " + demoContents);
-		view.displayMessage("Creating ArrayLists","making lists.png");
+		view.displayMessage("Creating ArrayLists", "making lists.png");
 
 		String[] wordsArray = { "Putting", "a", "String", "array", "into a list", "!" };
 		ArrayList<String> listFromArray = new ArrayList<String>(Arrays.asList(wordsArray));
@@ -75,7 +75,7 @@ public class Controller
 		for (int index = 0; index < 10; index++)
 		{
 			Coffee current = new Coffee();
-			current.setCupSize( 10 * (index + 1));
+			current.setCupSize(10 * (index + 1));
 			drinks.add(current);
 		}
 
@@ -99,7 +99,7 @@ public class Controller
 		view.displayMessage("The first occurence of 'code' in the list is: " + position);
 		boolean hasNull = words.contains(null);
 		view.displayMessage("It is " + hasNull + " that the list has a null value.");
-		view.displayMessage("ArrayList information methods","size indexOf and contains.png");
+		view.displayMessage("ArrayList information methods", "size indexOf and contains.png");
 
 	}
 
@@ -156,9 +156,9 @@ public class Controller
 		wholeNumbers.add((int) (Math.E));
 		contents = wholeNumbers.toString();
 		view.displayMessage("Contents of the ArrayList<Integer>:\n" + contents);
-		
+
 		String intContents = "";
-		
+
 		for (int current : wholeNumbers)
 		{
 			intContents += "\n" + "Current int number is: " + current;
@@ -169,11 +169,11 @@ public class Controller
 			intContents += "\n" + "Current Integer number is: " + current;
 		}
 		view.displayMessage(intContents);
-		
-		view.displayMessage("Iteration is the same","looping int and Integer.png");
-		
+
+		view.displayMessage("Iteration is the same", "looping int and Integer.png");
+
 		String message = "";
-		
+
 		for (int index = 0; index < realNumbers.size(); index++)
 		{
 			double current = realNumbers.get(index);
@@ -184,20 +184,18 @@ public class Controller
 				message += "\n" + index + ": Comparing an Object to a primitive!!! and double values are the same!!!";
 			}
 		}
-		
-		view.displayMessage(message);
-		view.displayMessage("Wrapped classes are the same as primitives!!","comparing double to Double.png");
 
-		
+		view.displayMessage(message);
+		view.displayMessage("Wrapped classes are the same as primitives!!", "comparing double to Double.png");
 
 	}
 
 	private void insertingValues()
 	{
 		// DebugDuck
-		
+
 		ArrayList<DebugDuck> ducksList = new ArrayList<DebugDuck>();
-		DebugDuck demoDuck = new DebugDuck("Mx. Quax","Xan");
+		DebugDuck demoDuck = new DebugDuck("Mx. Quax", "Xan");
 		ducksList.add(demoDuck);
 		demoDuck = new DebugDuck();
 		ducksList.add(demoDuck);
@@ -209,7 +207,7 @@ public class Controller
 		String duckContent = ducksList.toString();
 		view.displayMessage(duckContent);
 		view.displayMessage("Adding to an ArrayList<DebugDuck>", "adding ducks.png");
-		
+
 		// Integer
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		for (int index = 10; index >= 0; index--)
@@ -219,27 +217,26 @@ public class Controller
 		String numberContent = numbers.toString();
 		view.displayMessage(numberContent);
 		view.displayMessage("Adding to an ArrayList<Integer>", "adding ints.png");
-		
+
 	}
-	
+
 	private void modifyingValues()
 	{
 		Coffee specialCoffee = new Coffee();
 		specialCoffee.setCupSize(32);
 		specialCoffee.setName("Vegan spicy mocha");
-		
+
 		String contents = "Drinks contains: " + "\n";
-		
+
 		for (Coffee current : drinks)
 		{
 			contents += current.toString();
 		}
-		
-		
+
 		Coffee replacedCoffee = drinks.set(drinks.size() / 2, specialCoffee);
 		contents += "\n\n" + replacedCoffee.toString() + " was removed" + "\n\n";
 		contents += "Drinks now contains: " + drinks.toString() + "\n";
-		
+
 		view.displayMessage(contents);
 		view.displayMessage("Replacing values", "replaced coffee.png");
 	}
@@ -282,17 +279,17 @@ public class Controller
 		view.displayMessage(drinksData);
 		view.displayMessage("Removing everything in one line", "drinks removal.png");
 	}
-	
+
 	private ArrayList<DebugDuck> makeDuckList()
 	{
-		ArrayList<DebugDuck> ducks = new  ArrayList<DebugDuck>();
-		
+		ArrayList<DebugDuck> ducks = new ArrayList<DebugDuck>();
+
 		ducks.add(new DebugDuck());
-		ducks.add(new DebugDuck("Ducky","human"));
-		ducks.add(new DebugDuck("Debug Ducky","mammmal"));
-		ducks.add(new DebugDuck("Swift duck","self"));
-		ducks.add(new DebugDuck("Java Duck","this"));
-		
+		ducks.add(new DebugDuck("Ducky", "human"));
+		ducks.add(new DebugDuck("Debug Ducky", "mammmal"));
+		ducks.add(new DebugDuck("Swift duck", "self"));
+		ducks.add(new DebugDuck("Java Duck", "this"));
+
 		ducks.get(0).askQuestion("Fake question 1");
 		ducks.get(0).askQuestion("Fake question 2");
 		ducks.get(1).askQuestion("Fake question 1");
@@ -305,15 +302,14 @@ public class Controller
 		ducks.get(4).askQuestion("Fake question 2");
 		ducks.get(2).askQuestion("Fake question 4");
 		ducks.get(2).askQuestion("Fake question 5");
-		
+
 		return ducks;
 	}
-	
-	
+
 	private ArrayList<String> setupWords()
 	{
 		ArrayList<String> content = new ArrayList<String>();
-		
+
 		content.add("AP Computer Science A");
 		content.add("AP Computer Science Principles");
 		content.add("Software Development");
@@ -325,62 +321,61 @@ public class Controller
 		content.add("SQL");
 		content.add("C++");
 		content.add("C#");
-		
+
 		return content;
 	}
-	
+
 	private void updateDrinks()
 	{
 		for (int index = 0; index < 10; index++)
 		{
 			Coffee current = new Coffee();
-			current.setCupSize( 10 * (index + 1));
+			current.setCupSize(10 * (index + 1));
 			drinks.add(current);
 		}
-		
+
 		Coffee specialCoffee = new Coffee();
 		specialCoffee.setCupSize(32);
 		specialCoffee.setName("Vegan spicy mocha");
 		drinks.add(specialCoffee);
 	}
-	
+
 	private void searchingLists()
 	{
 		ArrayList<String> words = setupWords();
-		
+
 		int totalMatching = countByCondition(words);
-		
+
 		view.displayMessage("There are " + totalMatching + " words that have 3 or more 'e' in them.");
 		view.displayMessage("Counting Algorithm", "count matching String.png");
-		
+
 		int allTheQuestions = summation(makeDuckList());
-		
+
 		view.displayMessage("There have been " + allTheQuestions + " questions answered by our DebugDucks!");
 		view.displayMessage("Summation Algorithm", "summation Ducks.png");
-		
+
 		updateDrinks();
-		
+
 		Coffee smallest = findMin(drinks);
-		
+
 		view.displayMessage("The smallest coffee is a " + smallest.getName() + ", with this much coffee: " + smallest.getCupSize());
 		view.displayMessage("Find minimum algorithm", "minimum coffee.png");
-		
-		
+
 		String biggestWord = findMax(words);
-		
+
 		view.displayMessage("The longest word in the words list is: " + biggestWord + " and it is " + biggestWord.length() + " letters long.");
 		view.displayMessage("Find maximum algorithm", "maximum String.png");
 	}
-		
+
 	private int countByCondition(ArrayList<String> source)
 	{
 		int count = 0;
-		
+
 		for (int index = 0; index < source.size(); index++)
 		{
 			String currentWord = source.get(index);
 			int conditionCount = 0;
-			
+
 			for (int stringIndex = 0; stringIndex < currentWord.length(); stringIndex++)
 			{
 				if (currentWord.substring(stringIndex, stringIndex + 1).equals("e"))
@@ -388,32 +383,32 @@ public class Controller
 					conditionCount++;
 				}
 			}
-		
+
 			if (conditionCount >= 3)
 			{
 				count++;
 			}
 		}
-		
+
 		return count;
 	}
-	
+
 	private int summation(ArrayList<DebugDuck> ducks)
 	{
 		int totalQuestions = 0;
-		
+
 		for (DebugDuck currentDuck : ducks)
 		{
 			totalQuestions += currentDuck.getAnsweredQuestions();
 		}
-		
+
 		return totalQuestions;
 	}
-	
+
 	private Coffee findMin(ArrayList<Coffee> drinks)
 	{
 		Coffee smallest = drinks.get(0);
-		
+
 		for (Coffee current : drinks)
 		{
 			if (current.getCupSize() < smallest.getCupSize())
@@ -421,28 +416,28 @@ public class Controller
 				smallest = current;
 			}
 		}
-		
+
 		return smallest;
 	}
-	
+
 	private String findMax(ArrayList<String> words)
 	{
 		String max = words.get(words.size() - 1);
-		
+
 		for (int index = words.size() - 2; index >= 0; index--)
 		{
 			String current = words.get(index);
-			
+
 			if (current.length() > max.length())
 			{
 				max = current;
 			}
 		}
-		
+
 		return max;
 	}
 
-private void removalDemo()
+	private void removalDemo()
 	{
 		ArrayList<String> topics = generateTopics();
 
@@ -455,7 +450,7 @@ private void removalDemo()
 		topics = generateTopics();
 		removed = badRemovalDemo(topics, "Java");
 		System.out.println("Should be: 5, but instead is: " + removed);
-		
+
 		keyboardInput.nextLine();
 		System.out.println("OK Removal");
 
@@ -481,7 +476,7 @@ private void removalDemo()
 		topics = generateTopics();
 		removed = betterRemovalDemo(topics, "Java");
 		System.out.println("Should be: 5, is: " + removed);
-		
+
 		keyboardInput.nextLine();
 		System.out.println("Best Removal");
 
@@ -522,8 +517,7 @@ private void removalDemo()
 
 		return topics;
 	}
-	
-	
+
 	private ArrayList<String> generateTopicsWithNull()
 	{
 		ArrayList<String> topics = new ArrayList<String>();
@@ -622,6 +616,5 @@ private void removalDemo()
 
 		return removedCount;
 	}
-
 
 }
